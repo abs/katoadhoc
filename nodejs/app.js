@@ -1,5 +1,8 @@
 var jwt = require('jwt-simple');
-var http = require('http');
+var express = require('express');
+var app = express();
+var fs = require('fs');
+var index = fs.readFileSync('index.html');
 
 var payload = {
 	exp : Math.round((new Date().getTime() / 1000)) + 3600,
@@ -12,13 +15,24 @@ var pkey = "EK1UcCeetSxCVAYEZw9zxr6iCHX0gm1JSSkamHVcxVQ";
 var skey = "pTif3EypiNOYIV8_QKQvm3KdJugGjSXVRkHdi0CX_1k";
 var token = 'https://kato.im/adhoc#/' + pkey + '/' + jwt.encode(payload, skey);
 
-http.createServer(function(req, res) {
+app.get('/index.html', function(req, res) {
+	res.writeHead(200, {
+		'Content-Type' : 'text/html'
+	});
+	res.write(index);
+	res.end();
+});
+
+app.get('/kato.json', function(req, res) {
 	res.writeHead(200, {
 		'Content-Type' : 'application/json'
 	});
-	var webpage = '';
-	res.write(token);
+	res.write(JSON.stringify({
+		"JWTToken" : token
+	}));
 	res.end();
-}).listen('4848', '127.0.0.1');
-console.log('Server running at http://127.0.0.1:4848');
+});
 
+var server = app.listen(4848, function() {
+	console.log('Listening on port %d', server.address().port);
+}); 

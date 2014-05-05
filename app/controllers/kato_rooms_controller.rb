@@ -21,10 +21,13 @@ class KatoRoomsController < ApplicationController
       "user_email" => "",
       "welcome_text" => "Welcome",
       "welcome_robot_name" => "Welcoming robot"},skey)
-      
+
     url = 'https://kato.im/adhoc#/' + pkey + '/' + token
 
-    render json: { url: url  }
+    respond_to do |format|
+      format.html {render action: "index"}
+      format.json {render json: { "JWTToken" => url}}
+    end
   end
 
   # GET /kato_rooms/1

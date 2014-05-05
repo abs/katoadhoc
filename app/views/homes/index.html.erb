@@ -46,7 +46,7 @@
 	<input type="radio" name="languages" onclick="radioClicked(this)"value="net">
 	Asp.Net
 	<br>
-	<input type="radio" name="languages"  onclick="radioClicked(this)"value="PHP">
+	<input type="radio" name="languages"  onclick="radioClicked(this)"value="php">
 	PHP
 	<br>
 	<input type="radio" name="languages" onclick="radioClicked(this)"value="ror">
@@ -61,15 +61,30 @@
 
 </form>
 
-<div id="code">
+<div id="code" style="display:none;">
 	<h1>CODE</h1>
 </div>
 <script>
-	
 	function radioClicked(radio) {
-		
 		console.log(radio.value);
-		 document.getElementById('code').display = 'block';
+		document.getElementById('code').style.display = 'block';
+		switch(radio.value) {
+			case 'php':
+				document.getElementById('code').innerHTML = '<h1>php</h1>';
+				break;
+			case 'ror':
+				document.getElementById('code').innerHTML = '<h1>ror</h1>';
+				break;
+			case 'net':
+				document.getElementById('code').innerHTML = '<h1>net</h1>';
+				break;
+			case 'django':
+				document.getElementById('code').innerHTML = '<h1>django</h1>';
+				break;
+			case 'node':
+				document.getElementById('code').innerHTML = '<h1>node</h1>';
+				break;
+		}
+
 	};
 </script>
-

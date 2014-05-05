@@ -46,10 +46,10 @@
         xhr.open('GET', url, true);
         xhr.send('');
     }
-    load('/kato_rooms.json?userid=1&username=test_user&room_id=1&roomname=test_room&exp=3600', function(xhr) {
-    	debugger;
+    load('kato.json', function(xhr) {
+	debugger;
         var object = JSON.parse(xhr.responseText);
-        document.getElementById('katoFrame').src = "https://kato.im/adhoc#/EK1UcCeetSxCVAYEZw9zxr6iCHX0gm1JSSkamHVcxVQ/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjEzOTkzMDcyMDQsInVzZXJfaWQiOm51bGwsInVzZXJfbmFtZSI6ImZvbyIsInJvb21faWQiOm51bGwsInJvb21fbmFtZSI6ImJhciJ9.k0Q51mw4iKVyoYP4n3rFCIPSv5awwYRejLlAYKzr6js";//object.JWTToken;
+        document.getElementById('katoFrame').src = object.JWTToken;
     });
 </script>
         <script type="text/css">
