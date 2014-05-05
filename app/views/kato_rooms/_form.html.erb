@@ -1,0 +1,21 @@
+<%= form_for(@kato_room) do |f| %>
+  <% if @kato_room.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@kato_room.errors.count, "error") %> prohibited this kato_room from being saved:</h2>
+
+      <ul>
+      <% @kato_room.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :Get %><br>
+    <%= f.text_field :Get %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

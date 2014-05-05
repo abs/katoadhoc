@@ -1,0 +1,25 @@
+<h1>Listing kato_rooms</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Get</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @kato_rooms.each do |kato_room| %>
+      <tr>
+        <td><%= kato_room.Get %></td>
+        <td><%= link_to 'Show', kato_room %></td>
+        <td><%= link_to 'Edit', edit_kato_room_path(kato_room) %></td>
+        <td><%= link_to 'Destroy', kato_room, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Kato room', new_kato_room_path %>
