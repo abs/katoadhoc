@@ -1,23 +1,50 @@
 <h1>Listing homes</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div id="fields">
+	<div>
+		<label>Secret Key
+			<input type="text" id="skey" />
+		</label>
+	</div>
+	<div>
+		<label> Public Key
+			<input type="text" id="pkey" />
+		</label>
+	</div>
+	<div>
+		<label>User ID
+			<input type="text" id="user_id" />
+		</label>
+	</div>
+	<div>
+		<label>User Name
+			<input type="text" id="user_name" />
+		</label>
+	</div>
+	<div>
+		<label>Room ID
+			<input type="text" id="room_id" />
+		</label>
+	</div>
+	<div>
+		<label>Room Name
+			<input type="text" id="room_name" />
+		</label>
+	</div>
+	<div>
+		<label>Session Duration
+			<input type="text" id="exp" />
+		</label>
+	</div>
+</div>
+<br><br>
+<div id="languages"> Select the language <br>
+	<input type="radio" name="sex" value="net">Asp.Net<br>
+<input type="radio" name="sex" value="PHP">PHP<br>
+<input type="radio" name="sex" value="ror">Ruby On Rails<br>
+<input type="radio" name="sex" value="django">Django Python<br>
+<input type="radio" name="sex" value="node">NodeJS<br>
+</div>
 
-  <tbody>
-    <% @homes.each do |home| %>
-      <tr>
-        <td><%= link_to 'Show', home %></td>
-        <td><%= link_to 'Edit', edit_home_path(home) %></td>
-        <td><%= link_to 'Destroy', home, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
-<br>
 
-<%= link_to 'New Home', new_home_path %>
