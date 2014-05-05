@@ -37,14 +37,39 @@
 		</label>
 	</div>
 </div>
-<br><br>
-<div id="languages"> Select the language <br>
-	<input type="radio" name="sex" value="net">Asp.Net<br>
-<input type="radio" name="sex" value="PHP">PHP<br>
-<input type="radio" name="sex" value="ror">Ruby On Rails<br>
-<input type="radio" name="sex" value="django">Django Python<br>
-<input type="radio" name="sex" value="node">NodeJS<br>
+<br>
+<br>
+
+<form name="languages">
+	Select the language
+	<br>
+	<input type="radio" name="languages" onclick="radioClicked(this)"value="net">
+	Asp.Net
+	<br>
+	<input type="radio" name="languages"  onclick="radioClicked(this)"value="PHP">
+	PHP
+	<br>
+	<input type="radio" name="languages" onclick="radioClicked(this)"value="ror">
+	Ruby On Rails
+	<br>
+	<input type="radio" name="languages" onclick="radioClicked(this)"value="django">
+	Django Python
+	<br>
+	<input type="radio" name="languages" onclick="radioClicked(this)" value="node">
+	NodeJS
+	<br>
+
+</form>
+
+<div id="code">
+	<h1>CODE</h1>
 </div>
-
-
+<script>
+	
+	function radioClicked(radio) {
+		
+		console.log(radio.value);
+		 document.getElementById('code').display = 'block';
+	};
+</script>
 
