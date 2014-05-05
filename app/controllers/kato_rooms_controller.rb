@@ -3,7 +3,6 @@ class KatoRoomsController < ApplicationController
   # GET /kato_rooms
   # GET /kato_rooms.json
   def index
-
     user_id = params['userid']
     user_name = params['username']
     room_id = params['roomid']
