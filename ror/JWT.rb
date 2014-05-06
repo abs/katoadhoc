@@ -3,21 +3,17 @@ class KatoRoomsController < ApplicationController
   # GET /kato_rooms
   # GET /kato_rooms.json
   def index
-    user_id = params['userid']
-    user_name = params['username']
-    room_id = params['roomid']
-    room_name = params['roomname']
-    duration = params['exp']
 
-    pkey = 'EK1UcCeetSxCVAYEZw9zxr6iCHX0gm1JSSkamHVcxVQ'
-    skey = "pTif3EypiNOYIV8_QKQvm3KdJugGjSXVRkHdi0CX_1k"
-
+    pkey = '__pkey__'
+    skey = '__skey__'
+    duration = __duration__
+    
     token = JWT.encode(
     {"exp"=>(((Time.now.to_f * 1000).to_i)+duration.to_i),
-      "user_id"=>user_id,
-      "user_name"=>user_name,
-      "room_id"=>room_id,
-      "room_name"=>room_name,
+      "user_id"=>__userid__,
+      "user_name"=>"__username__",
+      "room_id"=>__roomid__,
+      "room_name"=>"__roomname__",
       "user_email" => "",
       "welcome_text" => "Welcome",
       "welcome_robot_name" => "Welcoming robot"},skey)

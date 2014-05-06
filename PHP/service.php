@@ -1,13 +1,13 @@
 <?php
 require_once "JWT.php";
 
-$pkey = "EK1UcCeetSxCVAYEZw9zxr6iCHX0gm1JSSkamHVcxVQ";
-$skey = "pTif3EypiNOYIV8_QKQvm3KdJugGjSXVRkHdi0CX_1k";
+$pkey = "__pkey__";
+$skey = "__skey__";
 
-$user_id = 0;
-$user_name = "bars";
-$room_id = 0;
-$room_name = "bar";
+$user_id = __userid__;
+$user_name = "__username__";
+$room_id = __roomid__;
+$room_name = "__roomname__";
 
 $JWT = new JWT;
 $header = '{"typ":"JWT","alg":"HS256"}';

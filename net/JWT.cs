@@ -1,22 +1,37 @@
-public JsonResult Index(string userid, string roomid)
+using System;
+using System.Collections.Generic;
+using System.Web.Mvc;
+
+namespace JWT_test.Controllers
+{
+    public class JWTModel
+    {
+        public string JWTToken { get; set; }
+
+    }
+    public class JWTController : Controller
+    {
+        public JsonResult Index()
         {
-            var payload = new Dictionary<string, object>() { 
-            { "exp",(Math.Round(GetTime()/ 1000.00))+3600 },
-            { "user_id", userid }, 
-            {"user_name" , "foo"}, 
-            {"room_id" , roomid}, 
-            {"room_name", "bar"} };
+            var payload = new Dictionary<string, object>() {
+                { "exp",(Math.Round(GetTime()/ 1000.00))+__duration__ },
+                { "user_id", "__userid__" }, 
+                {"user_name" , "__username__"}, 
+                {"room_id" , "__roomid__"}, 
+                {"room_name", "__roomname__"} 
+            };
 
-            var pkey = "EK1UcCeetSxCVAYEZw9zxr6iCHX0gm1JSSkamHVcxVQ";
+            var pkey = "__pkey__";
 
-            var skey = "pTif3EypiNOYIV8_QKQvm3KdJugGjSXVRkHdi0CX_1k";
+            var skey = "__skey__";
 
             string token = "https://kato.im/adhoc#/" + pkey + "/" + JWT.JsonWebToken.Encode(payload, skey, JWT.JwtHashAlgorithm.HS256);
             Console.Out.WriteLine(token);
 
-            return Json(token, JsonRequestBehavior.AllowGet);
+            return Json(new JWTModel { JWTToken = "token" }, JsonRequestBehavior.AllowGet);
         }
 
+        //Calculates linux epoche.
         private Int64 GetTime()
         {
             Int64 retval = 0;
@@ -25,3 +40,5 @@ public JsonResult Index(string userid, string roomid)
             retval = (Int64)(t.TotalMilliseconds + 0.5);
             return retval;
         }
+    }
+}

@@ -3,21 +3,16 @@ class HomesController < ApplicationController
   # GET /homes
   # GET /homes.json
   def index
-    php = File.open('./PHP/service.php')
-    @php = php.read
-    php.close
-
-    node = File.open('./nodejs/app.js')
-    @node = node.read
-    node.close
-
-    net = File.open('./net/JWT.cs')
-    @net = net.read
-    net.close
-
-    ror = File.open('./ror/JWT.rb')
-    @ror = ror.read
-    ror.close
+    
+    @htmlcode = File.read('./PHP/index.html')
+    @php =File.read('./PHP/service.php')
+    @node = File.read('./nodejs/app.js')
+    @net = File.read('./net/JWT.cs')
+    @ror = File.read('./ror/JWT.rb')
+    @django = File.read('./python/JWT.py')
+logger.debug "'********'"
+    logger.debug File.read('./PHP/index.html')
+    logger.debug "'********'"
   end
 
   # GET /homes/1
