@@ -58,33 +58,46 @@
 	<input type="radio" name="languages" onclick="radioClicked(this)" value="node">
 	NodeJS
 	<br>
-
 </form>
 
 <div id="code" style="display:none;">
 	<h1>CODE</h1>
 </div>
+<div id="php" style="display:none;">
+	<%= @php %>
+</div>
+<div id="net" style="display:none;">
+	<%= @net %>
+</div>
+<div id="node" style="display:none;">
+	<%= @node %>
+</div>
 <script>
 	function radioClicked(radio) {
 		console.log(radio.value);
 		document.getElementById('code').style.display = 'block';
+		document.getElementById('php').style.display = 'none';
+		document.getElementById('net').style.display = 'none';
+		document.getElementById('node').style.display = 'none';
 		switch(radio.value) {
 			case 'php':
 				document.getElementById('code').innerHTML = '<h1>php</h1>';
+				document.getElementById('php').style.display = 'block';
 				break;
 			case 'ror':
 				document.getElementById('code').innerHTML = '<h1>ror</h1>';
 				break;
 			case 'net':
 				document.getElementById('code').innerHTML = '<h1>net</h1>';
+				document.getElementById('net').style.display = 'block';
 				break;
 			case 'django':
 				document.getElementById('code').innerHTML = '<h1>django</h1>';
 				break;
 			case 'node':
 				document.getElementById('code').innerHTML = '<h1>node</h1>';
+				document.getElementById('node').style.display = 'block';
 				break;
 		}
-
 	};
 </script>

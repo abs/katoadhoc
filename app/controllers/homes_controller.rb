@@ -1,10 +1,15 @@
 class HomesController < ApplicationController
   before_action :set_home, only: [:show, :edit, :update, :destroy]
-
   # GET /homes
   # GET /homes.json
   def index
-    @homes = Home.all
+    php = File.open('./PHP/service.php')
+    @php = php.read
+    php.close
+
+node = File.open('./nodejs/app.js')
+    @node = node.read
+    node.close
   end
 
   # GET /homes/1
@@ -62,13 +67,14 @@ class HomesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_home
-      @home = Home.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def home_params
-      params[:home]
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_home
+    @home = Home.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def home_params
+    params[:home]
+  end
 end
