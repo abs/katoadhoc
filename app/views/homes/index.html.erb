@@ -61,17 +61,26 @@
 </form>
 
 <div id="code" style="display:none;">
-	<h1>CODE</h1>
-</div>
-<div id="php" style="display:none;">
-	<%= @php %>
-</div>
-<div id="net" style="display:none;">
-	<%= @net %>
-</div>
-<div id="node" style="display:none;">
-	<%= @node %>
-</div>
+</div>	<h1>CODE</h1>
+
+	<div id="php" style="display:none;">
+		<%= @php %>
+	</div>
+	<div id="net" style="display:none;">
+		<%= @net %>
+	</div>
+	<div id="node" style="display:none;">
+		<%= @node %>
+	</div>
+
+	<div id="ror" style="display:none;">
+		<%= @ror %>
+	</div>
+	
+		<div id="django" style="display:none;">
+		<%= @django %>
+	</div>
+
 <script>
 	function radioClicked(radio) {
 		console.log(radio.value);
@@ -79,6 +88,9 @@
 		document.getElementById('php').style.display = 'none';
 		document.getElementById('net').style.display = 'none';
 		document.getElementById('node').style.display = 'none';
+		document.getElementById('ror').style.display = 'none';
+		document.getElementById('django').style.display = 'none';
+
 		switch(radio.value) {
 			case 'php':
 				document.getElementById('code').innerHTML = '<h1>php</h1>';
@@ -86,6 +98,7 @@
 				break;
 			case 'ror':
 				document.getElementById('code').innerHTML = '<h1>ror</h1>';
+				document.getElementById('ror').style.display = 'block';
 				break;
 			case 'net':
 				document.getElementById('code').innerHTML = '<h1>net</h1>';
@@ -93,6 +106,7 @@
 				break;
 			case 'django':
 				document.getElementById('code').innerHTML = '<h1>django</h1>';
+				document.getElementById('django').style.display = 'block';
 				break;
 			case 'node':
 				document.getElementById('code').innerHTML = '<h1>node</h1>';

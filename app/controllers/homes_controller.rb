@@ -7,9 +7,17 @@ class HomesController < ApplicationController
     @php = php.read
     php.close
 
-node = File.open('./nodejs/app.js')
+    node = File.open('./nodejs/app.js')
     @node = node.read
     node.close
+
+    net = File.open('./net/JWT.cs')
+    @net = net.read
+    net.close
+
+    ror = File.open('./ror/JWT.rb')
+    @ror = ror.read
+    ror.close
   end
 
   # GET /homes/1
