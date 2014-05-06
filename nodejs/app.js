@@ -5,14 +5,14 @@ var fs = require('fs');
 var index = fs.readFileSync('index.html');
 
 var payload = {
-	exp : Math.round((new Date().getTime() / 1000)) + 3600,
-	user_id : '1000',
-	user_name : 'foo',
-	room_id : '1000',
-	room_name : 'bar'
+	exp : Math.round((new Date().getTime() / 1000)) + __duration__,
+	user_id : '__userid__',
+	user_name : '__username__',
+	room_id : '__roomid__',
+	room_name : '__roomname__'
 };
-var pkey = "EK1UcCeetSxCVAYEZw9zxr6iCHX0gm1JSSkamHVcxVQ";
-var skey = "pTif3EypiNOYIV8_QKQvm3KdJugGjSXVRkHdi0CX_1k";
+var pkey = "__pkey__";
+var skey = "__skey__";
 var token = 'https://kato.im/adhoc#/' + pkey + '/' + jwt.encode(payload, skey);
 
 app.get('/index.html', function(req, res) {

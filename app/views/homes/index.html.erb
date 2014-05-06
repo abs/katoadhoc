@@ -1,41 +1,21 @@
+<script type="text/javascript" src="./google-code-prettify/prettify.js"></script>
 <h1>Listing homes</h1>
 
 <div id="fields">
-	<div>
-		<label>Secret Key
-			<input type="text" id="skey" />
-		</label>
-	</div>
-	<div>
-		<label> Public Key
-			<input type="text" id="pkey" />
-		</label>
-	</div>
-	<div>
-		<label>User ID
-			<input type="text" id="user_id" />
-		</label>
-	</div>
-	<div>
-		<label>User Name
-			<input type="text" id="user_name" />
-		</label>
-	</div>
-	<div>
-		<label>Room ID
-			<input type="text" id="room_id" />
-		</label>
-	</div>
-	<div>
-		<label>Room Name
-			<input type="text" id="room_name" />
-		</label>
-	</div>
-	<div>
-		<label>Session Duration
-			<input type="text" id="exp" />
-		</label>
-	</div>
+	<label>Secret Key </label>
+	<input type="text" id="skey" style="display: block;" />
+	<label> Public Key </label>
+	<input type="text" id="pkey" style="display: block;" />
+	<label>User ID </label>
+	<input type="text" id="user_id" style="display: block;" />
+	<label>User Name </label>
+	<input type="text" id="user_name" style="display: block;" />
+	<label>Room ID </label>
+	<input type="text" id="room_id" style="display: block;" />
+	<label>Room Name </label>
+	<input type="text" id="room_name" style="display: block;" />
+	<label />Session Duration </label>
+	<input type="text" id="exp" style="display: block;" />
 </div>
 <br>
 <br>
@@ -58,33 +38,106 @@
 	<input type="radio" name="languages" onclick="radioClicked(this)" value="node">
 	NodeJS
 	<br>
-
 </form>
 
-<div id="code" style="display:none;">
-	<h1>CODE</h1>
-</div>
-<script>
-	function radioClicked(radio) {
-		console.log(radio.value);
-		document.getElementById('code').style.display = 'block';
-		switch(radio.value) {
-			case 'php':
-				document.getElementById('code').innerHTML = '<h1>php</h1>';
-				break;
-			case 'ror':
-				document.getElementById('code').innerHTML = '<h1>ror</h1>';
-				break;
-			case 'net':
-				document.getElementById('code').innerHTML = '<h1>net</h1>';
-				break;
-			case 'django':
-				document.getElementById('code').innerHTML = '<h1>django</h1>';
-				break;
-			case 'node':
-				document.getElementById('code').innerHTML = '<h1>node</h1>';
-				break;
-		}
+<div id="code" style="display:none;"></div>
 
+<div id="php" style="display:none;">
+	PHP
+	<label style="font-weight:bold;">https://github.com/cfrett/JWT-PHP/blob/master/JWT.php</label>
+	<pre style="width:1100px" class="prettyprint" id="phpcode"><%= @php %></pre>					
+	HTML
+ 	<pre style="width:1100px"class="prettyprint"><%= @htmlcode %></pre>
+</div>
+<div id="net" style="display:none;">
+	.NET
+	<label style="font-weight:bold;">Install-Package JWT</label>
+	<pre style="width:1100px" class="prettyprint" id="netcode"'><%= @net %></pre>
+	HTML
+	<pre style="width:1100px" class="prettyprint"><%= @htmlcode %></pre>
+	</div>
+	<div id="node" style="display:none;">
+	Node.js
+	<label style="font-weight:bold;">npm install jwt-simple</label>
+	<pre style="width:1100px" class="prettyprint" id="nodecode"><%= @node %></pre>
+	HTML
+	<pre style="width:1100px" class="prettyprint"><%= @htmlcode %></pre>
+	</div>
+
+	<div id="ror" style="display:none;">
+	Ruby on Rails
+	<label style="font-weight:bold;">gem install jwt</label>
+	<pre style="width:1100px" class="prettyprint" id="rorcode"><%= @ror %></pre>
+	HTML
+	<pre style="width:1100px" class="prettyprint"><%= @htmlcode %></pre>
+	</div>
+
+	<div id="django" style="display:none;">
+	Django Python.
+	<label style="font-weight:bold;">sudo easy_install PyJWT</label>
+	<pre style="width:1100px" class="prettyprint"><%= @django %></pre>
+	HTML
+	<pre style="width:1100px" class="prettyprint"><%= @htmlcode %></pre>
+	</div>
+
+	<script>
+	function radioClicked(radio) {
+	console.log(radio.value);
+	document.getElementById('code').style.display = 'block';
+	document.getElementById('php').style.display = 'none';
+	document.getElementById('net').style.display = 'none';
+	document.getElementById('node').style.display = 'none';
+	document.getElementById('ror').style.display = 'none';
+	document.getElementById('django').style.display = 'none';
+
+	switch(radio.value) {
+	case 'php':
+	document.getElementById('code').innerHTML = '<h1>php</h1>';
+	document.getElementById('php').style.display = 'block';
+	document.getElementById("phpcode").innerHTML = document.getElementById("phpcode").innerHTML.replace("__skey__", document.getElementById("skey").value)
+	document.getElementById("phpcode").innerHTML = document.getElementById("phpcode").innerHTML.replace("__pkey__", document.getElementById("pkey").value)
+	document.getElementById("phpcode").innerHTML = document.getElementById("phpcode").innerHTML.replace("__userid__", document.getElementById("user_id").value)
+	document.getElementById("phpcode").innerHTML = document.getElementById("phpcode").innerHTML.replace("__username__", document.getElementById("user_name").value)
+	document.getElementById("phpcode").innerHTML = document.getElementById("phpcode").innerHTML.replace("__roomid__", document.getElementById("room_id").value)
+	document.getElementById("phpcode").innerHTML = document.getElementById("phpcode").innerHTML.replace("__roomname__", document.getElementById("room_name").value)
+	break;
+	case 'ror':
+	document.getElementById('code').innerHTML = '<h1>ror</h1>';
+	document.getElementById('ror').style.display = 'block';
+	document.getElementById("rorcode").innerHTML = document.getElementById("rorcode").innerHTML.replace("__skey__", document.getElementById("skey").value)
+	document.getElementById("rorcode").innerHTML = document.getElementById("rorcode").innerHTML.replace("__pkey__", document.getElementById("pkey").value)
+	document.getElementById("rorcode").innerHTML = document.getElementById("rorcode").innerHTML.replace("__userid__", document.getElementById("user_id").value)
+	document.getElementById("rorcode").innerHTML = document.getElementById("rorcode").innerHTML.replace("__username__", document.getElementById("user_name").value)
+	document.getElementById("rorcode").innerHTML = document.getElementById("rorcode").innerHTML.replace("__roomid__", document.getElementById("room_id").value)
+	document.getElementById("rorcode").innerHTML = document.getElementById("rorcode").innerHTML.replace("__roomname__", document.getElementById("room_name").value)
+	document.getElementById("rorcode").innerHTML = document.getElementById("rorcode").innerHTML.replace("__duration__", document.getElementById("exp").value)
+	break;
+	case 'net':
+	document.getElementById('code').innerHTML = '<h1>.NET</h1>';
+	document.getElementById('net').style.display = 'block';
+	document.getElementById("netcode").innerHTML = document.getElementById("netcode").innerHTML.replace("__skey__", document.getElementById("skey").value)
+	document.getElementById("netcode").innerHTML = document.getElementById("netcode").innerHTML.replace("__pkey__", document.getElementById("pkey").value)
+	document.getElementById("netcode").innerHTML = document.getElementById("netcode").innerHTML.replace("__userid__", document.getElementById("user_id").value)
+	document.getElementById("netcode").innerHTML = document.getElementById("netcode").innerHTML.replace("__username__", document.getElementById("user_name").value)
+	document.getElementById("netcode").innerHTML = document.getElementById("netcode").innerHTML.replace("__roomid__", document.getElementById("room_id").value)
+	document.getElementById("netcode").innerHTML = document.getElementById("netcode").innerHTML.replace("__roomname__", document.getElementById("room_name").value)
+	document.getElementById("netcode").innerHTML = document.getElementById("netcode").innerHTML.replace("__duration__", document.getElementById("exp").value)
+	break;
+	case 'django':
+	document.getElementById('code').innerHTML = '<h1>django</h1>';
+	document.getElementById('django').style.display = 'block';
+	break;
+	case 'node':
+	document.getElementById('code').innerHTML = '<h1>node</h1>';
+	document.getElementById('node').style.display = 'block';
+	document.getElementById("nodecode").innerHTML = document.getElementById("nodecode").innerHTML.replace("__skey__", document.getElementById("skey").value)
+	document.getElementById("nodecode").innerHTML = document.getElementById("nodecode").innerHTML.replace("__pkey__", document.getElementById("pkey").value)
+	document.getElementById("nodecode").innerHTML = document.getElementById("nodecode").innerHTML.replace("__userid__", document.getElementById("user_id").value)
+	document.getElementById("nodecode").innerHTML = document.getElementById("nodecode").innerHTML.replace("__username__", document.getElementById("user_name").value)
+	document.getElementById("nodecode").innerHTML = document.getElementById("nodecode").innerHTML.replace("__roomid__", document.getElementById("room_id").value)
+	document.getElementById("nodecode").innerHTML = document.getElementById("nodecode").innerHTML.replace("__roomname__", document.getElementById("room_name").value)
+	document.getElementById("nodecode").innerHTML = document.getElementById("nodecode").innerHTML.replace("__duration__", document.getElementById("exp").value)
+	break;
+	}
 	};
-</script>
+	</script>
