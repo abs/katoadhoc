@@ -1,5 +1,5 @@
 <script type="text/javascript" src="./google-code-prettify/prettify.js"></script>
-<body style="padding:30px;"> 
+<body style="padding:30px;">
 	<div id="fields">
 		<label>Secret Key </label>
 		<input type="text" id="skey" style="display: block;" />
@@ -43,7 +43,7 @@
 	<div id="php" style="display:none;">
 		PHP
 		<label style="font-weight:bold;">https://github.com/cfrett/JWT-PHP/blob/master/JWT.php</label>
-		<pre style="width:1100px" class="prettyprint" id="phpcode"><%= @php %></pre>								
+		<pre style="width:1100px" class="prettyprint" id="phpcode"><%= @php %></pre>										
 	HTML
  		<pre style="width:1100px"class="prettyprint"><%= @htmlcode %></pre>
 	</div>
@@ -73,7 +73,7 @@
 		<div id="django" style="display:none;">
 		Django Python.
 		<label style="font-weight:bold;">sudo easy_install PyJWT</label>
-		<pre style="width:1100px" class="prettyprint"><%= @django %></pre>
+		<pre style="width:1100px" class="prettyprint" id="djangocode"><%= @django %></pre>
 		HTML
 		<pre style="width:1100px" class="prettyprint"><%= @htmlcode %></pre>
 		</div>
@@ -124,11 +124,19 @@
 		case 'django':
 		document.getElementById('code').innerHTML = '<h1>django</h1>';
 		document.getElementById('django').style.display = 'block';
+		document.getElementById("djangocode").innerHTML = document.getElementById("djangocode").innerHTML.replace("__skey__", document.getElementById("skey").value)
+		document.getElementById("djangocode").innerHTML = document.getElementById("djangocode").innerHTML.replace("__pkey__", document.getElementById("pkey").value)
+		document.getElementById("djangocode").innerHTML = document.getElementById("djangocode").innerHTML.replace("__userid__", document.getElementById("user_id").value)
+		document.getElementById("djangocode").innerHTML = document.getElementById("djangocode").innerHTML.replace("__username__", document.getElementById("user_name").value)
+		document.getElementById("djangocode").innerHTML = document.getElementById("djangocode").innerHTML.replace("__roomid__", document.getElementById("room_id").value)
+		document.getElementById("djangocode").innerHTML = document.getElementById("djangocode").innerHTML.replace("__roomname__", document.getElementById("room_name").value)
+		document.getElementById("djangocode").innerHTML = document.getElementById("djangocode").innerHTML.replace("__duration__", document.getElementById("exp").value)
 		break;
 		case 'node':
 		document.getElementById('code').innerHTML = '<h1>node</h1>';
 		document.getElementById('node').style.display = 'block';
 		document.getElementById("nodecode").innerHTML = document.getElementById("nodecode").innerHTML.replace("	", document.getElementById("skey").value)
+		document.getElementById("nodecode").innerHTML = document.getElementById("nodecode").innerHTML.replace("__skey__", document.getElementById("skey").value)
 		document.getElementById("nodecode").innerHTML = document.getElementById("nodecode").innerHTML.replace("__pkey__", document.getElementById("pkey").value)
 		document.getElementById("nodecode").innerHTML = document.getElementById("nodecode").innerHTML.replace("__userid__", document.getElementById("user_id").value)
 		document.getElementById("nodecode").innerHTML = document.getElementById("nodecode").innerHTML.replace("__username__", document.getElementById("user_name").value)
