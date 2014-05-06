@@ -10,9 +10,7 @@ class HomesController < ApplicationController
     @net = File.read('./net/JWT.cs')
     @ror = File.read('./ror/JWT.rb')
     @django = File.read('./python/JWT.py')
-logger.debug "'********'"
-    logger.debug File.read('./PHP/index.html')
-    logger.debug "'********'"
+    
   end
 
   # GET /homes/1

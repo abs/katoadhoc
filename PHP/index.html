@@ -11,7 +11,8 @@
 		if ( typeof XMLHttpRequest !== 'undefined')
 			xhr = new XMLHttpRequest();
 		else {
-			var versions = ["MSXML2.XmlHttp.5.0", "MSXML2.XmlHttp.4.0", "MSXML2.XmlHttp.3.0", "MSXML2.XmlHttp.2.0", "Microsoft.XmlHttp"]
+			var versions = ["MSXML2.XmlHttp.5.0", "MSXML2.XmlHttp.4.0", 
+			"MSXML2.XmlHttp.3.0", "MSXML2.XmlHttp.2.0", "Microsoft.XmlHttp"]
 
 			for (var i = 0, len = versions.length; i < len; i++) {
 				try {
