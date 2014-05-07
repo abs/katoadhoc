@@ -1,6 +1,6 @@
 def service(request):
-	pkey = "EK1UcCeetSxCVAYEZw9zxr6iCHX0gm1JSSkamHVcxVQ"
-	skey = "pTif3EypiNOYIV8_QKQvm3KdJugGjSXVRkHdi0CX_1k"
+	pkey = "__pkey__"
+	skey = "__skey__"
 
 	user_id = "__userid__"
 	user_name = "__username__"

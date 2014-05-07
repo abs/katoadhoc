@@ -13,7 +13,9 @@ class HomesController < ApplicationController
     @nethtml = File.read('./net/index.html')
     @ror = File.read('./ror/JWT.rb')
     @rorhtml = File.read('./ror/index.html')
-    @django = File.read('./python/JWT.py')
+    
+    @django = File.read('./python/new/views.py')
+    @djangohtml = File.read('./python/new/katoTemplate.html')
     
   end
 
