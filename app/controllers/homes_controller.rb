@@ -5,8 +5,10 @@ class HomesController < ApplicationController
   def index
     
     @htmlcode = File.read('./PHP/index.html')
-    @php =File.read('./PHP/service.php')
+    @php =File.read('./PHP/singlePage.php')
+    
     @node = File.read('./nodejs/app.js')
+    @nodehtml = File.read('./nodejs/index.html')
     @net = File.read('./net/JWT.cs')
     @nethtml = File.read('./net/index.html')
     @ror = File.read('./ror/JWT.rb')
