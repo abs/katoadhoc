@@ -15,24 +15,13 @@ var pkey = "__pkey__";
 var skey = "__skey__";
 var token = 'https://kato.im/adhoc#/' + pkey + '/' + jwt.encode(payload, skey);
 
-app.get('/index.html', function(req, res) {
-	res.writeHead(200, {
-		'Content-Type' : 'text/html'
-	});
-	res.write(index);
-	res.end();
-});
-
-app.get('/kato.json', function(req, res) {
-	res.writeHead(200, {
-		'Content-Type' : 'application/json'
-	});
-	res.write(JSON.stringify({
-		"JWTToken" : token
-	}));
-	res.end();
+app.get('/', function(req, res){
+   res.writeHead(200, {'Content-Type': 'text/html'});
+   res.write(index.replace('__token__',token));
+   res.end();
 });
 
 var server = app.listen(4848, function() {
-	console.log('Listening on port %d', server.address().port);
-}); 
+    console.log('Listening on port %d', server.address().port);
+});
+

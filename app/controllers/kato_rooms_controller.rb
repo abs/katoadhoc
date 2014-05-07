@@ -14,19 +14,19 @@ class KatoRoomsController < ApplicationController
 
     token = JWT.encode(
     {"exp"=>(((Time.now.to_f * 1000).to_i)+duration.to_i),
-      "user_id"=>user_id,
-      "user_name"=>user_name,
-      "room_id"=>room_id,
-      "room_name"=>room_name,
+      "user_id"=>1,
+      "user_name"=>"user_name",
+      "room_id"=>1,
+      "room_name"=>"room_name",
       "user_email" => "",
       "welcome_text" => "Welcome",
       "welcome_robot_name" => "Welcoming robot"},skey)
 
-    url = 'https://kato.im/adhoc#/' + pkey + '/' + token
+    @url = 'https://kato.im/adhoc#/' + pkey + '/' + token
 
     respond_to do |format|
       format.html {render action: "index"}
-      format.json {render json: { "JWTToken" => url}}
+      format.json {render json: { "JWTToken" => @url}}
     end
   end
 

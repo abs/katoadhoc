@@ -8,7 +8,9 @@ class HomesController < ApplicationController
     @php =File.read('./PHP/service.php')
     @node = File.read('./nodejs/app.js')
     @net = File.read('./net/JWT.cs')
+    @nethtml = File.read('./net/index.html')
     @ror = File.read('./ror/JWT.rb')
+    @rorhtml = File.read('./ror/index.html')
     @django = File.read('./python/JWT.py')
     
   end

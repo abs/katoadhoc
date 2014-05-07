@@ -1,0 +1,55 @@
+//Razor
+@model JWT_test.Controllers.JWTModel
+@Html.Hidden("JWTToken")
+<body>
+    <button id="katoButton" onclick="openChat()">Open Chat</button>
+</body>
+<script type="text/javascript">
+
+    var token = document.getElementById('JWTToken').value;
+
+    var catoContainer = document.createElement("div");
+    catoContainer.id = "katoContainer";
+    catoContainer.style.display = "none";
+    catoContainer.style.position = "fixed";
+    catoContainer.style.right = "20px";
+    catoContainer.style.bottom = "0px";
+
+    catoContainer.innerHTML = "<a href='#' onClick='closeChat()'>close</a><br><iframe style='height:350px;' src='" + token + "'></iframe>";
+    document.body.appendChild(catoContainer);
+
+    var openChat = function () {
+        document.getElementById('katoContainer').style.display = "block";
+    };
+    var closeChat = function () {
+        document.getElementById('katoContainer').style.display = "none";
+    };
+</script>
+
+//ASPX (C#)
+<%@ Page Language="C#" Inherits="System.Web.Mvc.ViewPage<JWT_test.Controllers.JWTModel>" %>
+<%=Html.Hidden("JWTToken")%>
+<body>
+    <button id="katoButton" onclick="openChat()">Open Chat</button>
+</body>
+<script type="text/javascript">
+
+    var token = document.getElementById('JWTToken').value;
+
+    var catoContainer = document.createElement("div");
+    catoContainer.id = "katoContainer";
+    catoContainer.style.display = "none";
+    catoContainer.style.position = "fixed";
+    catoContainer.style.right = "20px";
+    catoContainer.style.bottom = "0px";
+
+    catoContainer.innerHTML = "<a href='#' onClick='closeChat()'>close</a><br><iframe style='height:350px;' src='" + token + "'></iframe>";
+    document.body.appendChild(catoContainer);
+
+    var openChat = function () {
+        document.getElementById('katoContainer').style.display = "block";
+    };
+    var closeChat = function () {
+        document.getElementById('katoContainer').style.display = "none";
+    };
+</script>

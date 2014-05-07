@@ -4,7 +4,7 @@ require_once "JWT.php";
 $pkey = "__pkey__";
 $skey = "__skey__";
 
-$user_id = __userid__;
+$user_id = CHANGE_ME; //This should be set in runtime
 $user_name = "__username__";
 $room_id = __roomid__;
 $room_name = "__roomname__";
