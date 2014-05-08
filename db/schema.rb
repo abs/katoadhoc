@@ -13,15 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20140505113814) do
 
-  create_table "homes", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "kato_rooms", force: true do |t|
-    t.string   "Get"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+ 
 
 end

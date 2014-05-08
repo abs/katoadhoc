@@ -4,18 +4,19 @@ class HomesController < ApplicationController
   # GET /homes.json
   def index
     
-    @htmlcode = File.read('./PHP/index.html')
     @php =File.read('./PHP/singlePage.php')
     
     @node = File.read('./nodejs/app.js')
     @nodehtml = File.read('./nodejs/index.html')
+   
     @net = File.read('./net/JWT.cs')
     @nethtml = File.read('./net/index.html')
+   
     @ror = File.read('./ror/JWT.rb')
     @rorhtml = File.read('./ror/index.html')
     
-    @django = File.read('./python/new/views.py')
-    @djangohtml = File.read('./python/new/katoTemplate.html')
+    @django = File.read('./python/views.py')
+    @djangohtml = File.read('./python/katoTemplate.html')
     
   end
 
