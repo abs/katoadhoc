@@ -16,9 +16,9 @@ namespace JWT_test.Controllers
             var payload = new Dictionary<string, object>() {
                 { "exp",(Math.Round(GetTime()/ 1000.00))+__duration__ },
                 { "user_id", "__userid__" }, 
-                {"user_name" , "__username__"}, 
-                {"room_id" , "__roomid__"}, 
-                {"room_name", "__roomname__"} 
+                { "user_name" , "__username__" }, 
+                { "room_id" , "__roomid__" }, 
+                { "room_name", "__roomname__" } 
             };
 
             var pkey = "__pkey__";
@@ -26,7 +26,6 @@ namespace JWT_test.Controllers
             var skey = "__skey__";
 
             string token = "https://kato.im/adhoc#/" + pkey + "/" + JWT.JsonWebToken.Encode(payload, skey, JWT.JwtHashAlgorithm.HS256);
-            Console.Out.WriteLine(token);
 
             return Json(new JWTModel { JWTToken = "token" }, JsonRequestBehavior.AllowGet);
         }
