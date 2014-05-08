@@ -8,15 +8,15 @@
 
     var token = document.getElementById('JWTToken').value;
 
-    var catoContainer = document.createElement("div");
-    catoContainer.id = "katoContainer";
-    catoContainer.style.display = "none";
-    catoContainer.style.position = "fixed";
-    catoContainer.style.right = "20px";
-    catoContainer.style.bottom = "0px";
+    var katoContainer = document.createElement("div");
+    katoContainer.id = "katoContainer";
+    katoContainer.style.display = "none";
+    katoContainer.style.position = "fixed";
+    katoContainer.style.right = "20px";
+    katoContainer.style.bottom = "0px";
 
-    catoContainer.innerHTML = "<a href='#' onClick='closeChat()'>close</a><br><iframe style='height:350px;' src='"+ token +"'></iframe>";
-    document.body.appendChild(catoContainer);
+    katoContainer.innerHTML = "<a href='#' onClick='closeChat()'>close</a><br><iframe style='height:350px;' src='"+ token +"'></iframe>";
+    document.body.appendChild(katoContainer);
 
     var openChat = function() {
         document.getElementById('katoContainer').style.display = "block";
