@@ -1,5 +1,19 @@
+		<input id="aspCodeRaw" type="hidden" value="<%= @net %>" />
+		<input id="aspHtmlRaw" type="hidden" value="<%= @nethtml %><" />
+		
+		<input id="phpCodeRaw" type="hidden" value="<%= @php %>" />
+		
+		<input id="rubyCodeRaw" type="hidden" value="<%= @ror %>" />
+		<input id="rubyHtmlRaw" type="hidden" value="<%= @rorhtml %><" />
+		
+		<input id="djangoCodeRaw" type="hidden" value="<%= @django %>" />
+		<input id="djangoHtmlRaw" type="hidden" value="<%= @djangohtml %><" />
+		
+		<input id="nodeCodeRaw" type="hidden" value="<%= @node %>" />
+		<input id="nodeHtmlRaw" type="hidden" value="<%= @nodehtml %><" />
+		
 		<div class="container">
-			<h1>JWT code snippet generator</h1>
+			<h1>Kato Adhoc Room code snippets</h1>
 			<br />
 			<form class="form-horizontal">
 				<div class="control-group">
@@ -17,31 +31,31 @@
 				<div class="control-group">
 					<label class="control-label">User ID</label>
 					<div class="controls">
-						<input type="text" id="user_id" placeholder="User ID">
+						<input type="text" id="userid" placeholder="User ID">
 					</div>
 				</div>
 				<div class="control-group">
 					<label class="control-label">User Name</label>
 					<div class="controls">
-						<input type="text" id="user_name" placeholder="User Name">
+						<input type="text" id="username" placeholder="User Name">
 					</div>
 				</div>
 				<div class="control-group">
 					<label class="control-label">Room ID</label>
 					<div class="controls">
-						<input type="text" id="room_id" placeholder="Room ID">
+						<input type="text" id="roomid" placeholder="Room ID">
 					</div>
 				</div>
 				<div class="control-group">
 					<label class="control-label">Room Name</label>
 					<div class="controls">
-						<input type="text" id="skey" placeholder="Room Name">
+						<input type="text" id="roomname" placeholder="Room Name">
 					</div>
 				</div>
 				<div class="control-group">
 					<label class="control-label">Session Duration</label>
 					<div class="controls">
-						<input type="text" id="exp" placeholder="Session Duration">
+						<input type="text" id="duration" placeholder="Session Duration">
 					</div>
 				</div>
 			</form>
@@ -49,116 +63,87 @@
 
 		<h2>Choose Language</h2>
 		<br />
-		<ul class="nav nav-tabs">
+		<ul class="nav nav-tabs" id="tabs">
 				<li class="active">
-					<a href="#AspNet">Asp NET</a>
+					<a href="#AspNet" class="aspNet">Asp NET</a>
 				</li>
 				<li>
-					<a href="#php">PHP</a>
+					<a href="#php" class="php">PHP</a>
 				</li>
 				<li>
-					<a href="#ruby">Ruby On Rails</a>
+					<a href="#ruby" class="ruby">Ruby On Rails</a>
 				</li>
 				<li>
-					<a href="#django">Django Phyton</a>
+					<a href="#django" class="django">Django Phyton</a>
 				</li>
 				<li>
-					<a href="#nodeJS">NodeJS</a>
+					<a href="#nodeJS" class="nodeJS">NodeJS</a>
 				</li>
 			</ul>
 		
-		
-			<div class="tabs" id="AspNet">
-				ASP NEET
+		<br />
+			<div class="tabs" id="aspNet">
+				<div class="alert alert-info"><b>Instructions:</b> Install nuget package <i>"Install-Package JWT"</i></div>
+				<h4>Asp.NET Code:</h4>
+				<pre>
+					<code></code>
+				</pre>
+				<h4>Html:</h4>
+				<pre>
+					<code></code>
+				</pre>
 			</div>
 
 			<div class="tabs" id="php">
-				PHPPP
+				<div class="alert alert-info"><b>Instructions:</b> Download JWT class from <a target="_new" href="https://github.com/cfrett/JWT-PHP/blob/master/JWT.php">"https://github.com/cfrett/JWT-PHP/blob/master/JWT.php</a></i></div>
+				<h4>Php Code:</h4>
+				<pre>
+					<code></code>
+				</pre>
 			</div>
 			<div class="tabs" id="ruby">
-				RUBY ON RAILS
+				<div class="alert alert-info"><b>Instructions:</b> Install GEM package <i>"gem install jwt"</i></div>
+				<h4>Ruby Code:</h4>
+				<pre>
+					<code></code>
+				</pre>
+				<h4>Html:</h4>
+				<pre>
+					<code></code>
+				</pre>
 			</div>
 			<div class="tabs" id="django">
-				DJANGOOO
+				<div class="alert alert-info"><b>Instructions:</b> Install package <i>"sudo easy_install PyJWT"</i></div>
+				<h4>Phyton (Django) Code:</h4>
+				<pre>
+					<code></code>
+				</pre>
+				<h4>Html:</h4>
+				<pre>
+					<code></code>
+				</pre>
 			</div>
 			<div class="tabs" id="nodeJS">
-				ASP NEET
+				<div class="alert alert-info"><b>Instructions:</b> Install package <i>"npm install jwt-simple</i></div>
+				<h4>NodeJS Code:</h4>
+				<pre>
+					<code></code>
+				</pre>
+				<h4>Html:</h4>
+				<pre>
+					<code></code>
+				</pre>
 			</div>
 
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 	
-	</br>
-	<br>
-	<br>
-
-	<form name="languages">
-		Select the language
-		<br>
-		<input type="radio" name="languages" onclick="radioClicked(this)"value="net">
-		Asp.Net
-		<br>
-		<input type="radio" name="languages"  onclick="radioClicked(this)"value="php">
-		PHP
-		<br>
-		<input type="radio" name="languages" onclick="radioClicked(this)"value="ror">
-		Ruby On Rails
-		<br>
-		<input type="radio" name="languages" onclick="radioClicked(this)"value="django">
-		Django Python
-		<br>
-		<input type="radio" name="languages" onclick="radioClicked(this)" value="node">
-		NodeJS
-		<br>
-	</form>
-
-	<div id="code" style="display:none;"></div>
-	<div id="php" style="display:none;">
-		PHP
-		<label style="font-weight:bold;">https://github.com/cfrett/JWT-PHP/blob/master/JWT.php</label>
-		<pre style="width:1100px" class="prettyprint" id="phpcode"><%= @php %></pre>
-	</div>
-	<div id="net" style="display:none;">
-		.NET
-		<label style="font-weight:bold;">Install-Package JWT</label>
-		<pre style="width:1100px" class="prettyprint" id="netcode"'><%= @net %></pre>
-		HTML
-		<pre style="width:1100px" class="prettyprint"><%= @nethtml %></pre>
-		</div>
-		<div id="node" style="display:none;">
-		Node.js
-		<label style="font-weight:bold;">npm install jwt-simple</label>
-		<pre style="width:1100px" class="prettyprint" id="nodecode"><%= @node %></pre>
-		HTML
-		<pre style="width:1100px" class="prettyprint"><%= @nodehtml %></pre>
-		</div>
-
-		<div id="ror" style="display:none;">
-		Ruby on Rails
-		<label style="font-weight:bold;">gem install jwt</label>
-		<pre style="width:1100px" class="prettyprint" id="rorcode"><%= @ror %></pre>
-		HTML
-		<pre style="width:1100px" class="prettyprint"><%= @rorhtml %></pre>
-		</div>
-
-		<div id="django" style="display:none;">
-		Django Python.
-		<label style="font-weight:bold;">sudo easy_install PyJWT</label>
-		<pre style="width:1100px" class="prettyprint" id="djangocode"><%= @django %></pre>
-		HTML
-		<pre style="width:1100px" class="prettyprint"><%= @djangohtml %></pre>
-		</div>
+	
 
 	<style type="text/css">
 			.tabs{
 				display:none;
+			}
+			.container input{
+				padding:13px !important;
 			}
 		</style>
