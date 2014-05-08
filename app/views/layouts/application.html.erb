@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>KatoAdhoc</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-<%= yield %>
+	<head>
+		<title>KatoAdhoc</title>
+		<%= csrf_meta_tags %>
+		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+		<%= javascript_include_tag 'application' %>
+		<%= csrf_meta_tags %>
+	</head>
+	<body>
+		<%= yield %>
 
-</body>
+	</body>
 </html>

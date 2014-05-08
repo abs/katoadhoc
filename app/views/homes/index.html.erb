@@ -1,21 +1,102 @@
-<script type="text/javascript" src="./google-code-prettify/prettify.js"></script>
-<body style="padding:30px;">
-	<div id="fields">
-		<label>Secret Key </label>
-		<input type="text" id="skey" style="display: block;" />
-		<label> Public Key </label>
-		<input type="text" id="pkey" style="display: block;" />
-		<label>User ID </label>
-		<input type="text" id="user_id" style="display: block;" />
-		<label>User Name </label>
-		<input type="text" id="user_name" style="display: block;" />
-		<label>Room ID </label>
-		<input type="text" id="room_id" style="display: block;" />
-		<label>Room Name </label>
-		<input type="text" id="room_name" style="display: block;" />
-		<label />Session Duration </label>
-		<input type="text" id="exp" style="display: block;" />
-	</div>
+		<div class="container">
+			<h1>JWT code snippet generator</h1>
+			<br />
+			<form class="form-horizontal">
+				<div class="control-group">
+					<label class="control-label">Secret Key</label>
+					<div class="controls">
+						<input type="text" id="skey" placeholder="Secret Key">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">Public Key</label>
+					<div class="controls">
+						<input type="text" id="pkey" placeholder="Public Key">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">User ID</label>
+					<div class="controls">
+						<input type="text" id="user_id" placeholder="User ID">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">User Name</label>
+					<div class="controls">
+						<input type="text" id="user_name" placeholder="User Name">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">Room ID</label>
+					<div class="controls">
+						<input type="text" id="room_id" placeholder="Room ID">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">Room Name</label>
+					<div class="controls">
+						<input type="text" id="skey" placeholder="Room Name">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">Session Duration</label>
+					<div class="controls">
+						<input type="text" id="exp" placeholder="Session Duration">
+					</div>
+				</div>
+			</form>
+
+
+		<h2>Choose Language</h2>
+		<br />
+		<ul class="nav nav-tabs">
+				<li class="active">
+					<a href="#AspNet">Asp NET</a>
+				</li>
+				<li>
+					<a href="#php">PHP</a>
+				</li>
+				<li>
+					<a href="#ruby">Ruby On Rails</a>
+				</li>
+				<li>
+					<a href="#django">Django Phyton</a>
+				</li>
+				<li>
+					<a href="#nodeJS">NodeJS</a>
+				</li>
+			</ul>
+		
+		
+			<div class="tabs" id="AspNet">
+				ASP NEET
+			</div>
+
+			<div class="tabs" id="php">
+				PHPPP
+			</div>
+			<div class="tabs" id="ruby">
+				RUBY ON RAILS
+			</div>
+			<div class="tabs" id="django">
+				DJANGOOO
+			</div>
+			<div class="tabs" id="nodeJS">
+				ASP NEET
+			</div>
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+	</br>
 	<br>
 	<br>
 
@@ -75,74 +156,9 @@
 		HTML
 		<pre style="width:1100px" class="prettyprint"><%= @djangohtml %></pre>
 		</div>
-		</body>
-		<script>
-		function radioClicked(radio) {
-		console.log(radio.value);
-		document.getElementById('code').style.display = 'block';
-		document.getElementById('php').style.display = 'none';
-		document.getElementById('net').style.display = 'none';
-		document.getElementById('node').style.display = 'none';
-		document.getElementById('ror').style.display = 'none';
-		document.getElementById('django').style.display = 'none';
 
-		switch(radio.value) {
-		case 'php':
-		document.getElementById('code').innerHTML = '<h1>php</h1>';
-		document.getElementById('php').style.display = 'block';
-		document.getElementById("phpcode").innerHTML = document.getElementById("phpcode").innerHTML.replace("__skey__", document.getElementById("skey").value)
-		document.getElementById("phpcode").innerHTML = document.getElementById("phpcode").innerHTML.replace("__pkey__", document.getElementById("pkey").value)
-		document.getElementById("phpcode").innerHTML = document.getElementById("phpcode").innerHTML.replace("__userid__", document.getElementById("user_id").value)
-		document.getElementById("phpcode").innerHTML = document.getElementById("phpcode").innerHTML.replace("__username__", document.getElementById("user_name").value)
-		document.getElementById("phpcode").innerHTML = document.getElementById("phpcode").innerHTML.replace("__roomid__", document.getElementById("room_id").value)
-		document.getElementById("phpcode").innerHTML = document.getElementById("phpcode").innerHTML.replace("__roomname__", document.getElementById("room_name").value)
-		break;
-		case 'ror':
-		document.getElementById('code').innerHTML = '<h1>ror</h1>';
-		document.getElementById('ror').style.display = 'block';
-		document.getElementById("rorcode").innerHTML = document.getElementById("rorcode").innerHTML.replace("__skey__", document.getElementById("skey").value)
-		document.getElementById("rorcode").innerHTML = document.getElementById("rorcode").innerHTML.replace("__pkey__", document.getElementById("pkey").value)
-		document.getElementById("rorcode").innerHTML = document.getElementById("rorcode").innerHTML.replace("__userid__", document.getElementById("user_id").value)
-		document.getElementById("rorcode").innerHTML = document.getElementById("rorcode").innerHTML.replace("__username__", document.getElementById("user_name").value)
-		document.getElementById("rorcode").innerHTML = document.getElementById("rorcode").innerHTML.replace("__roomid__", document.getElementById("room_id").value)
-		document.getElementById("rorcode").innerHTML = document.getElementById("rorcode").innerHTML.replace("__roomname__", document.getElementById("room_name").value)
-		document.getElementById("rorcode").innerHTML = document.getElementById("rorcode").innerHTML.replace("__duration__", document.getElementById("exp").value)
-		break;
-		case 'net':
-		document.getElementById('code').innerHTML = '<h1>.NET</h1>';
-		document.getElementById('net').style.display = 'block';
-		document.getElementById("netcode").innerHTML = document.getElementById("netcode").innerHTML.replace("__skey__", document.getElementById("skey").value)
-		document.getElementById("netcode").innerHTML = document.getElementById("netcode").innerHTML.replace("__pkey__", document.getElementById("pkey").value)
-		document.getElementById("netcode").innerHTML = document.getElementById("netcode").innerHTML.replace("__userid__", document.getElementById("user_id").value)
-		document.getElementById("netcode").innerHTML = document.getElementById("netcode").innerHTML.replace("__username__", document.getElementById("user_name").value)
-		document.getElementById("netcode").innerHTML = document.getElementById("netcode").innerHTML.replace("__roomid__", document.getElementById("room_id").value)
-		document.getElementById("netcode").innerHTML = document.getElementById("netcode").innerHTML.replace("__roomname__", document.getElementById("room_name").value)
-		document.getElementById("netcode").innerHTML = document.getElementById("netcode").innerHTML.replace("__duration__", document.getElementById("exp").value)
-		break;
-		case 'django':
-		document.getElementById('code').innerHTML = '<h1>django</h1>';
-		document.getElementById('django').style.display = 'block';
-		document.getElementById("djangocode").innerHTML = document.getElementById("djangocode").innerHTML.replace("__skey__", document.getElementById("skey").value)
-		document.getElementById("djangocode").innerHTML = document.getElementById("djangocode").innerHTML.replace("__pkey__", document.getElementById("pkey").value)
-		document.getElementById("djangocode").innerHTML = document.getElementById("djangocode").innerHTML.replace("__userid__", document.getElementById("user_id").value)
-		document.getElementById("djangocode").innerHTML = document.getElementById("djangocode").innerHTML.replace("__username__", document.getElementById("user_name").value)
-		document.getElementById("djangocode").innerHTML = document.getElementById("djangocode").innerHTML.replace("__roomid__", document.getElementById("room_id").value)
-		document.getElementById("djangocode").innerHTML = document.getElementById("djangocode").innerHTML.replace("__roomname__", document.getElementById("room_name").value)
-		document.getElementById("djangocode").innerHTML = document.getElementById("djangocode").innerHTML.replace("__duration__", document.getElementById("exp").value)
-		break;
-		case 'node':
-		document.getElementById('code').innerHTML = '<h1>node</h1>';
-		document.getElementById('node').style.display = 'block';
-		document.getElementById("nodecode").innerHTML = document.getElementById("nodecode").innerHTML.replace("	", document.getElementById("skey").value)
-		document.getElementById("nodecode").innerHTML = document.getElementById("nodecode").innerHTML.replace("__skey__", document.getElementById("skey").value)
-		document.getElementById("nodecode").innerHTML = document.getElementById("nodecode").innerHTML.replace("__pkey__", document.getElementById("pkey").value)
-		document.getElementById("nodecode").innerHTML = document.getElementById("nodecode").innerHTML.replace("__userid__", document.getElementById("user_id").value)
-		document.getElementById("nodecode").innerHTML = document.getElementById("nodecode").innerHTML.replace("__username__", document.getElementById("user_name").value)
-		document.getElementById("nodecode").innerHTML = document.getElementById("nodecode").innerHTML.replace("__roomid__", document.getElementById("room_id").value)
-		document.getElementById("nodecode").innerHTML = document.getElementById("nodecode").innerHTML.replace("__roomname__", document.getElementById("room_name").value)
-		document.getElementById("nodecode").innerHTML = document.getElementById("nodecode").innerHTML.replace("__duration__", document.getElementById("exp").value)
-		break;
-		}
-		};
-		</script>
-
+	<style type="text/css">
+			.tabs{
+				display:none;
+			}
+		</style>
