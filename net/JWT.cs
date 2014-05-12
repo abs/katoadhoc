@@ -11,7 +11,7 @@ namespace JWT_test.Controllers
     {
 		public JsonResult Index(string userid, string roomid)
         {
-            var token = Kato.KeyGenerator.GenerateKey("EK1UcCeetSxCVAYEZw9zxr6iCHX0gm1JSSkamHVcxVQ", "pTif3EypiNOYIV8_QKQvm3KdJugGjSXVRkHdi0CX_1k", "1", "foo", "1", "bar", 3600);
+            var token = Kato.KeyGenerator.GenerateUrl("__pkey__", "__skey__", "__userid__", "__username__", "__roomid__", "__roomname__", __duration__);
 
             return Json(new JWTModel { JWTToken = token }, JsonRequestBehavior.AllowGet);
         }

@@ -12,7 +12,7 @@
 	$JWT = new JWT;
 	$header = '{"typ":"JWT","alg":"HS256"}';
 	$now = new DateTime();
-	$now->add(new DateInterval('PT1H'));
+	$now->add(new DateInterval('PT__duration__S'));
 
 	$payload = '{"exp":'.$now->getTimestamp().',"user_id":"'.$user_id.'","user_name":"'.$user_name.'","room_id":"'.$room_id.'","room_name":"'.$room_name.'"}';
 

@@ -17,6 +17,7 @@ var radioClicked = function(radio) {
 			document.getElementById("phpcode").innerHTML = document.getElementById("phpcode").innerHTML.replace("__username__", document.getElementById("user_name").value);
 			document.getElementById("phpcode").innerHTML = document.getElementById("phpcode").innerHTML.replace("__roomid__", document.getElementById("room_id").value);
 			document.getElementById("phpcode").innerHTML = document.getElementById("phpcode").innerHTML.replace("__roomname__", document.getElementById("room_name").value);
+			document.getElementById("phpcode").innerHTML = document.getElementById("phpcode").innerHTML.replace("__duration__", document.getElementById("exp").value);
 			break;
 		case 'ror':
 			document.getElementById('code').innerHTML = '<h1>ror</h1>';
