@@ -11,33 +11,11 @@ namespace JWT_test.Controllers
     }
     public class JWTController : Controller
     {
-        public JsonResult Index()
+		public JsonResult Index(string userid, string roomid)
         {
-            var payload = new Dictionary<string, object>() {
-                { "exp",(Math.Round(GetTime()/ 1000.00))+__duration__ },
-                { "user_id", "__userid__" }, 
-                { "user_name" , "__username__" }, 
-                { "room_id" , "__roomid__" }, 
-                { "room_name", "__roomname__" } 
-            };
+            var token = Kato.KeyGenerator.GenerateKey("EK1UcCeetSxCVAYEZw9zxr6iCHX0gm1JSSkamHVcxVQ", "pTif3EypiNOYIV8_QKQvm3KdJugGjSXVRkHdi0CX_1k", "1", "foo", "1", "bar", 3600);
 
-            var pkey = "__pkey__";
-
-            var skey = "__skey__";
-
-            string token = "https://kato.im/adhoc#/" + pkey + "/" + JWT.JsonWebToken.Encode(payload, skey, JWT.JwtHashAlgorithm.HS256);
-
-            return Json(new JWTModel { JWTToken = "token" }, JsonRequestBehavior.AllowGet);
-        }
-
-        //Calculates linux epoche.
-        private Int64 GetTime()
-        {
-            Int64 retval = 0;
-            DateTime st = new DateTime(1970, 1, 1);
-            TimeSpan t = (DateTime.Now - st);
-            retval = (Int64)(t.TotalMilliseconds + 0.5);
-            return retval;
+            return Json(new JWTModel { JWTToken = token }, JsonRequestBehavior.AllowGet);
         }
     }
 }
