@@ -3,7 +3,6 @@ class KatoRoomsController < ApplicationController
   # GET /kato_rooms
   # GET /kato_rooms.json
   def index
-    
     url = KatoAdHocExpress.generateKey('__pkey__','__skey__', __duration__,'__userid__', '__username__','__roomid__','__roomname__')
     respond_to do |format|
       format.html {render action: "index"}

@@ -6,17 +6,9 @@ def service(request):
 	user_name = "__username__"
 	room_id = "__roomid__"
 	room_name = "__roomname__"
-	
-	
-	from datetime import datetime, timedelta
-	import jwt, json
-	expDate = datetime.now() + timedelta(hours=1)
-	
-	payload = '{"exp":'+str(expDate.timestamp())+',"user_id":"'+user_id+'","user_name":"'+user_name+'","room_id":"'+room_id+'","room_name":"'+room_name+'"}';
-	
-	generatedJWT = jwt.encode(json.loads(payload), skey, "HS256")
-	jwtToString = generatedJWT.decode()
-	token = "https://kato.im/adhoc#/"+pkey+"/"+jwtToString;
+
+	from katoAdhocExpress import kato
+	token = kato.generateUrl(pkey, skey, exp, user_id, user_name, room_id, room_name, user_email, welcome_text, welcome_robot_name )
 	jsonToReturn = {"JWTToken":token};
 
 	t = loader.get_template('katoTemplate.html')
