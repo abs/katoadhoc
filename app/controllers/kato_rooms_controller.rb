@@ -4,8 +4,10 @@ class KatoRoomsController < ApplicationController
   # GET /kato_rooms.json
   def index
 
-    @url =KatoAdHocExpress.generateKey("EK1UcCeetSxCVAYEZw9zxr6iCHX0gm1JSSkamHVcxVQ", "pTif3EypiNOYIV8_QKQvm3KdJugGjSXVRkHdi0CX_1k",3600, "1", "foo", "1", "bar")
-
+    @url =KatoAdHocExpress.generateKey("dychNluc2WxxX46N-odG3aOBxF_h4o39P_y3eNZf7Pc", "EMxxK0z32ULskJgTKlgrouB6C9fDIjkXq92UPb1ICwk",3600, "1", "foo", "1", "bar")
+    cookies[:KATO_ADHOC_TOKEN] = @url
+    
+    
     respond_to do |format|
       format.html {render action: "index"}
       format.json {render json: { "JWTToken" => @url}}
