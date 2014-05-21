@@ -26,7 +26,7 @@ $(document).ready(function() {
 	$("#nodeJS code:first").text($("#nodeCodeRaw").val());
 	$("#nodeJS code:nth(1)").text($("#nodeHtmlRaw").val());
 	
-	var codes = [$("#aspCodeRaw").val(),$("#phpCodeRaw").val(),$("#rubyCodeRaw").val(),$("#djangoCodeRaw").val(),$("#nodeCodeRaw").val()];
+	var codes = [$("#aspCodeRaw").val(),$("#aspHtmlRaw").val(),$("#phpCodeRaw").val(),$("#rubyCodeRaw").val(),$("#rubyHtmlRaw").val(),$("#djangoCodeRaw").val(),$("#djangoHtmlRaw").val(),$("#nodeCodeRaw").val(),$("#nodeHtmlRaw").val()];
 	$("input[type=text]").change(function(){
 		
 		for (index = 0; index < codes.length; index++) {
@@ -39,9 +39,15 @@ $(document).ready(function() {
 	
 	
 	var updateValues = function(item, value, code, codeId){
-		var codeIds = ["aspNet", "php","ruby","django","nodeJS"];
+		var codeIds = ["aspNet","aspNetHtml", "php","ruby","rubyHtml","django","djangoHtml","nodeJS","nodeJSHtml"];
 		var updatedCode = code.replace('__'+item+'__',value);
+		if(codeIds[codeId].indexOf("Html")>=0)
+		{
+			$("#"+codeIds[codeId]).text(updatedCode);
+		}else
+		{
 		$("#"+codeIds[codeId]+" code:first").text(updatedCode);
+		}
 		return updatedCode;
 	};
 	

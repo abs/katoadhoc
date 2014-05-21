@@ -1,16 +1,16 @@
 def index(request):
 	from katoAdhocExpress import kato
 	
-	skey = "__pkey__"
-	exp = __exp__
-	user_id = '__user_id__'
-	user_name = "__user_name__"
-	room_id = '__room_id__'
-	room_name = "__room_name__"
+	skey = "__skey__"
+	user_id = "__userid__"
+	user_name = "__username__"
+	room_id = "__roomid__"
+	room_name = "__roomname__"
+	exp = __duration__
 	
-	user_email= '__user_email__' 		
-	welcome_text= '__welcome_text__' 		
-	welcome_robot_name= '__welcome_robot_name__'
+	user_email= '__useremail__' 		
+	welcome_text= '__welcometext__' 		
+	welcome_robot_name= '__welcomerobotname__'
 	
 	t = loader.get_template('katoTemplate.html')
 	res = HttpResponse(t.render(Context(None)))

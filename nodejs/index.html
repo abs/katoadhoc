@@ -20,7 +20,7 @@
         katoContainer.style['background-color'] = '#fcfcfc';
         katoContainer.style.border = '10px solid #fcfcfc';
 
-        katoContainer.innerHTML = "<a style='font-weight: bold; font-family: Verdana, Arial, Helvetica, sans-serif; color: #666666; text-decoration: none; float: right; clear: both; margin-bottom: 10px;' id='katoButton' href='#' onclick='toggleKatoRoom();'>Support</a><div id='katoContainerInner' style='display: none;'><iframe style='height:350px;' frameBorder='0' src='http://app.kato.im/adhoc#/__pkey__/" + katoAdhocReadCookie() + "'></iframe></div>";
+        katoContainer.innerHTML = "<a style='font-weight: bold; font-family: Verdana, Arial, Helvetica, sans-serif; color: #666666; text-decoration: none; float: right; clear: both; margin-bottom: 10px;' id='katoButton' href='#' onclick='toggleKatoRoom();'>Support</a><div id='katoContainerInner' style='display: none;'><iframe style='height:350px;' frameBorder='0' src='http://app.kato.im/adhoc#/"+__pkey__+"/" + katoAdhocReadCookie() + "'></iframe></div>";
         document.body.appendChild(katoContainer);
 
         var toggleKatoRoom = function () {

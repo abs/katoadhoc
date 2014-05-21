@@ -9,11 +9,16 @@ namespace JWT_test.Controllers
     }
     public class JWTController : Controller
     {
-		public JsonResult Index(string userid, string roomid)
+        public ActionResult Index(string userid, string roomid)
         {
-            var token = Kato.KeyGenerator.GenerateUrl("__pkey__", "__skey__", "__userid__", "__username__", "__roomid__", "__roomname__", __duration__);
+            SetInfo(Response, "__skey__", "__userid__", "__username__", "__roomid__", "__roomname__", __duration__);
+            return View();
+        }
 
-            return Json(new JWTModel { JWTToken = token }, JsonRequestBehavior.AllowGet);
+        private object SetInfo(System.Web.HttpResponseBase Response, string sKey, string userId, string userName,
+            string roomId, string roomName, int expiration)
+        {
+            return Kato.KeyGenerator.SetInfo(sKey, userId, userName, roomId, roomName, expiration);
         }
     }
 }
