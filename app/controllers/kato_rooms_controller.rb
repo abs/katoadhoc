@@ -4,7 +4,7 @@ class KatoRoomsController < ApplicationController
   # GET /kato_rooms.json
   def index
 
-    @url =KatoAdHocExpress.generateKey("dychNluc2WxxX46N-odG3aOBxF_h4o39P_y3eNZf7Pc", "EMxxK0z32ULskJgTKlgrouB6C9fDIjkXq92UPb1ICwk",3600, "1", "foo", "1", "bar")
+    @url =KatoAdHocExpress.setInfo( "EMxxK0z32ULskJgTKlgrouB6C9fDIjkXq92UPb1ICwk",3600, "1", "foo", "1", "bar")
     cookies[:KATO_ADHOC_TOKEN] = @url
     
     
