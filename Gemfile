@@ -37,7 +37,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 gem 'jwt'
-gem 'katoadhocexpress', '~> 1.0.9'
+gem 'katoadhocexpress', '~> 1.0.10'
 
   gem 'bootstrap-sass', '3.1.1.1'
   gem 'sass-rails',   '~>  4.0.2'
