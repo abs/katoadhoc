@@ -1,25 +1,38 @@
-<input id="JWTToken" name="JWTToken" type="hidden" value="__token__">
 <body>
-    <button id="katoButton" onclick="openChat()">Open Chat</button>
+    <p>Hello friend</p>
+    <script type="text/javascript">
+        var katoAdhocReadCookie = function () {
+            var nameEQ = 'KATO_ADHOC_TOKEN' + '=';
+            var ca = document.cookie.split(';');
+            for(var i=0;i < ca.length;i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+            }
+            return null;
+        }
+        var katoContainer = document.createElement('div');
+        katoContainer.id = 'katoContainer';
+        katoContainer.style.display = 'block';
+        katoContainer.style.position = 'fixed';
+        katoContainer.style.right = '20px';
+        katoContainer.style.bottom = '0px';
+        katoContainer.style['background-color'] = '#fcfcfc';
+        katoContainer.style.border = '10px solid #fcfcfc';
+
+        katoContainer.innerHTML = "<a style='font-weight: bold; font-family: Verdana, Arial, Helvetica, sans-serif; color: #666666; text-decoration: none; float: right; clear: both; margin-bottom: 10px;' id='katoButton' href='#' onclick='toggleKatoRoom();'>Support</a><div id='katoContainerInner' style='display: none;'><iframe style='height:350px;' frameBorder='0' src='http://app.kato.im/adhoc#/__pkey__/" + katoAdhocReadCookie() + "'></iframe></div>";
+        document.body.appendChild(katoContainer);
+
+        var toggleKatoRoom = function () {
+            var el = document.getElementById('katoButton');
+            var iframeContainer = document.getElementById('katoContainerInner');
+            if (iframeContainer.style.display === 'none') {
+                el.innerHTML = 'Hide';
+                iframeContainer.style.display = 'block'
+            } else {
+                el.innerHTML = 'Support';
+                iframeContainer.style.display = 'none'
+            }
+        };
+    </script>
 </body>
-<script type="text/javascript">
-
-    var token = document.getElementById('JWTToken').value;
-
-    var katoContainer = document.createElement("div");
-    katoContainer.id = "katoContainer";
-    katoContainer.style.display = "none";
-    katoContainer.style.position = "fixed";
-    katoContainer.style.right = "20px";
-    katoContainer.style.bottom = "0px";
-
-    katoContainer.innerHTML = "<a href='#' onClick='closeChat()'>close</a><br><iframe style='height:350px;' src='" + token + "'></iframe>";
-    document.body.appendChild(katoContainer);
-
-    var openChat = function () {
-        document.getElementById('katoContainer').style.display = "block";
-    };
-    var closeChat = function () {
-        document.getElementById('katoContainer').style.display = "none";
-    };
-</script>
