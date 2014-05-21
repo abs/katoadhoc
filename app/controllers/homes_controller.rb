@@ -4,7 +4,7 @@ class HomesController < ApplicationController
   # GET /homes.json
   def index
     
-    @php =File.read('./PHP/singlePage.php')
+    @php =File.read('./PHP/index.php')
     
     @node = File.read('./nodejs/app.js')
     @nodehtml = File.read('./nodejs/index.html')

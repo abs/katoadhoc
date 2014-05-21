@@ -50,7 +50,7 @@ GEM
       thor (>= 0.14, < 2.0)
     json (1.8.1)
     jwt (1.0.0)
-    katoadhocexpress (1.0.7)
+    katoadhocexpress (1.0.9)
       jwt
     mail (2.5.4)
       mime-types (~> 1.16)
@@ -126,7 +126,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   jwt
-  katoadhocexpress (~> 1.0.7)
+  katoadhocexpress (~> 1.0.9)
   rails (= 4.1.0)
   sass-rails (~> 4.0.2)
   sdoc (~> 0.4.0)
