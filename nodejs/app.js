@@ -25,7 +25,7 @@ var katoSettings = {
     room_name : '__roomname__',
 
 	//**********NOTE***********
-	//If these values are not used please remov
+	//If these values are not used please remove
     // Optional, user email address (visible in tooltip over user name in history) must be unique when used within the scope of a given public key
     user_email: '__user_email__',
 
