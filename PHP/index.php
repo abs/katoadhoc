@@ -1,15 +1,27 @@
 <?php
 	require_once "JWT.php";
-
+	// Required secret key
 	$skey = "__skey__";
-
+	
+	// Required, unique user id
 	$user_id = "__userid__";
+	
+	// Required, unique username
 	$user_name = "__username__";
+	
+	// Required, unique room id
 	$room_id = "__roomid__";
+	
+	 // Required, room name
 	$room_name = "__roomname__";
-	///Optional
+	
+	// Optional, user email address (visible in tooltip over user name in history) must be unique when used within the scope of a given public key
 	$user_email = "__user_email__";
-    $welcome_text = "__welcome_text__";
+    
+	// Optional, text message to be sent out by welcome robot when room is created
+	$welcome_text = "__welcome_text__";
+	
+	// Optional, name of welcome robot, if not specified defaults to 'Welcome Robot'
     $welcome_robot_name = "__welcome_robot_name__";
 
 	$JWT = new JWT;

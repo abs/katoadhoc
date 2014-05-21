@@ -6,7 +6,7 @@ var app = express();
 var index = fs.readFileSync('index.html');
 
 var katoSettings = {
-    // Required
+    // Required secret key
     sKey: '__skey__',
 
     // Required, expiration epoch in seconds
@@ -15,7 +15,7 @@ var katoSettings = {
     // Required, unique user id
     user_id : '__userid__',
 
-    // Required, unique room id
+    // Required, unique username
     user_name : '__username__',
 
     // Required, unique room id
