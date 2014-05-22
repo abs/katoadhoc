@@ -5,6 +5,7 @@ class HomesController < ApplicationController
   def index
     
     @php =File.read('./PHP/index.php')
+    @phphtml =File.read('./PHP/template.html')
     
     @node = File.read('./nodejs/app.js')
     @nodehtml = File.read('./nodejs/index.html')
