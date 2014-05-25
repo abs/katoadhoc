@@ -8,10 +8,8 @@ namespace Kato
     public class KeyGenerator
     {
         /// <summary>
-        /// 
         /// </summary>
-        /// <param name="pkey">Public key issued by kato admin.</param>
-        /// <param name="skey">Secret key issued by kato admin.</param>
+        /// <param name="skey">Secret key.</param>
         /// <param name="userId">Unique user ID.</param>
         /// <param name="userName">User name.</param>
         /// <param name="roomId">Unique room ID.</param>
@@ -21,7 +19,7 @@ namespace Kato
         /// <param name="welcomeText">Text message to be sent out by welcome robot when room is created. (optional)</param>
         /// <param name="robotName">Name of welcome robot, if not specified defaults to 'Welcome Robot'. (optional)</param>
         /// <returns></returns>
-        public static object SetInfo(System.Web.HttpResponseBase Response,string skey, string userId, string userName, string roomId, string roomName, int expiration,
+        public static object SetInfo(System.Web.HttpResponseBase Response, string skey, string userId, string userName, string roomId, string roomName, int expiration,
             string userEmail = "__useremail__", string welcomeText = "__welcometext__", string robotName = "__robotname__")
         {
             var payload = new Dictionary<string, object>();
@@ -33,24 +31,31 @@ namespace Kato
             payload.Add("room_name", roomName);
 
             if (!string.IsNullOrEmpty(userEmail) || userEmail == "__useremail__")
+            {
                 payload.Add("user_email", userEmail);
+            }
 
             if (!string.IsNullOrEmpty(welcomeText) || welcomeText == "__welcometext__")
+            {
                 payload.Add("welcome_text", welcomeText);
+            }
 
             if (!string.IsNullOrEmpty(robotName) || robotName == "__robotname__")
+            {
                 payload.Add("welcome_robot_name", robotName);
+            }
+
             var cookie = new System.Web.HttpCookie("KATO_ADHOC_TOKEN");
             cookie.Value = JWT.JsonWebToken.Encode(payload, skey, JWT.JwtHashAlgorithm.HS256);
             Response.Cookies.Add(cookie);
+
             return Response;
         }
 
-
         /// <summary>
-        /// Calculates Linux epoche.
+        /// Calculates unix time.
         /// </summary>
-        /// <returns>Returns Liunux epoche in milliseconds.</returns>
+        /// <returns>Returns unix time in milliseconds.</returns>
         private static Int64 GetTime()
         {
             Int64 retval = 0;

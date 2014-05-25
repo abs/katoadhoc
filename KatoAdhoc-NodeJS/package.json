@@ -1,0 +1,27 @@
+{
+  "author": {
+    "name": "Mistral tech"
+  },
+  "name": "kato-adhoc-express",
+  "description": "npm test package",
+  "version": "0.1.21",
+  "repository": {
+    "url": ""
+  },
+  "main": "./lib/main",
+  "bin": {
+    "katoAdhocExpress": "./bin/kato-adhoc-express.js"
+  },
+  "dependencies": {
+    "jwt-simple": "~0.2.0"
+  },
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "engines": {
+    "node": "*"
+  },
+  "readme": "# KATO Adhoc Express\r\n\r\n\r\n\r\n## Installation\r\n\r\n    npm install kato-adhoc-express\r\n\r\n## Usage\r\n\r\n    var kato = require('kato-adhoc-express')\r\n    \r\n    var katoSettings = {\r\n        // Required\r\n        pKey: '<YOUR PUBLIC KEY>',\r\n        \r\n        // Required\r\n        sKey: '<YOUR PRIVATE KEY>',\r\n        \r\n        // Required, expiration epoch in seconds\r\n        exp: 3600,\r\n        \t\t\t\t\t\r\n        // Required, unique user id\r\n        user_id : 0,\r\n        \r\n        // Required, unique room id\r\n        user_name : 'John',\r\n        \r\n        // Required, unique room id\r\n        room_id : 0,\r\n        \r\n        // Required, room name\t\t\t\t\r\n        room_name : 'Kitchen',\r\n        \r\n        // Optional, user email address (visible in tooltip over user name in history) must be unique when used within the scope of a given public key\r\n        user_email: '',\r\n        \r\n        // Optional, text message to be sent out by welcome robot when room is created\r\n        welcome_text: '',\r\n        \r\n        // Optional, name of welcome robot, if not specified defaults to 'Welcome Robot'\r\n        welcome_robot_name: '',\t    \r\n    };\r\n    \r\n    var katoUrl = kato.generateUrl(katoSettings);\r\n\r\n",
+  "readmeFilename": "README.md",
+  "_id": "kato-adhoc-express@0.1.21",
+  "_from": "kato-adhoc-express@"
+}
